@@ -1,0 +1,17 @@
+# Virtual environment directories
+venv/
+.env/
+.venv/
+
+# Dataset directories
+data/
+dataset/
+extractedData/
+
+# Zip files
+*.zip
+archive.zip
+
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
