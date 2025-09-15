@@ -1,8 +1,8 @@
 // evaluator.js
 import fs from 'fs-extra';
 import path from 'path';
-import { loadEmbeddings, predictFromId, predictFromImage } from './predictor.js';
-import { cosineSimilarity } from './utils.js';
+import { loadEmbeddings, predictFromId, predictFromImage } from '../predictor.js';
+import { cosineSimilarity } from '../utils.js';
 
 /**
  * Comprehensive Evaluator for Multimodal Recommender Model

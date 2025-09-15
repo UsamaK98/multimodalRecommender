@@ -7,7 +7,7 @@ import path from 'path';
  * Data visualization utilities for evaluation results
  * Exports data in formats suitable for plotting libraries and creates simple ASCII charts
  */
-export class EvaluationVisualizer {
+class EvaluationVisualizer {
   constructor(config = {}) {
     this.config = {
       chart_width: 60,
@@ -977,7 +977,7 @@ Each JSON file contains structured data optimized for different chart types:
 }
 
 // Quick visualization utility for single charts
-export class QuickVisualizer {
+class QuickVisualizer {
   static createASCIIBarChart(data, title, maxWidth = 50) {
     let chart = `${title}\n${"=".repeat(title.length)}\n\n`;
     

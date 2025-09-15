@@ -2,13 +2,14 @@
 
 import fs from 'fs-extra';
 import path from 'path';
-import { loadEmbeddings, predictFromId, predictFromImage } from './predictor.js';
+import os from 'os';
+import { loadEmbeddings, predictFromId, predictFromImage } from '../predictor.js';
 import { performance } from 'perf_hooks';
 
 /**
  * Performance benchmarking suite for the multimodal recommender
  */
-export class PerformanceBenchmark {
+class PerformanceBenchmark {
   constructor(config = {}) {
     this.config = {
       warmup_iterations: 10,
@@ -610,9 +611,9 @@ export class PerformanceBenchmark {
       node_version: process.version,
       platform: process.platform,
       arch: process.arch,
-      memory_total_mb: Math.round(require('os').totalmem() / (1024 * 1024)),
-      cpu_cores: require('os').cpus().length,
-      cpu_model: require('os').cpus()[0]?.model || 'Unknown',
+      memory_total_mb: Math.round(process.memoryUsage().rss / (1024 * 1024) * 4), // Approximate
+      cpu_cores: 'N/A',
+      cpu_model: 'N/A',
       timestamp: new Date().toISOString()
     };
   }
@@ -724,7 +725,7 @@ export class PerformanceBenchmark {
 /**
  * Quick benchmark utility for single operations
  */
-export class QuickBenchmark {
+class QuickBenchmark {
   static async time(operation, iterations = 1) {
     const times = [];
     
@@ -782,4 +783,5 @@ if (process.argv[1].endsWith('benchmark.js')) {
   });
 }
 
+// Export classes
 export { PerformanceBenchmark, QuickBenchmark };

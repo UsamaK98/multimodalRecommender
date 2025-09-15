@@ -1,0 +1,393 @@
+{
+  "timestamp": "2025-09-15T14:11:33.735Z",
+  "config": {
+    "k_values": [
+      3,
+      5
+    ],
+    "target_fields": [
+      "articletype",
+      "gender"
+    ],
+    "test_split_ratio": 0.1,
+    "random_seed": 42,
+    "min_category_samples": 3,
+    "diversity_threshold": 0.7,
+    "name": "quick",
+    "max_test_samples": 100,
+    "performance_sample_size": 20
+  },
+  "metrics": {
+    "classification": {
+      "articletype": {
+        "k3": {
+          "accuracy": 0.7978723404255319,
+          "macro_precision": 0.5244349103277675,
+          "macro_recall": 0.5691026625704044,
+          "macro_f1": 0.5362613698880125
+        },
+        "k5": {
+          "accuracy": 0.75,
+          "macro_precision": 0.41677940115440115,
+          "macro_recall": 0.48499530636627414,
+          "macro_f1": 0.43303884914847496
+        }
+      },
+      "gender": {
+        "k3": {
+          "accuracy": 0.8723404255319149,
+          "macro_precision": 0.6637596636375966,
+          "macro_recall": 0.7349535864978903,
+          "macro_f1": 0.6830513424778939
+        },
+        "k5": {
+          "accuracy": 0.8882978723404256,
+          "macro_precision": 0.6543789900225543,
+          "macro_recall": 0.7420168776371308,
+          "macro_f1": 0.6868533573537963
+        }
+      }
+    },
+    "ranking": {
+      "articletype": {
+        "k3": {
+          "ndcg": 0.8336993093233628,
+          "mrr": 0.8164893617021279,
+          "map": 0.8133865248226951
+        },
+        "k5": {
+          "ndcg": 0.8491298513370534,
+          "mrr": 0.8260638297872341,
+          "map": 0.812315307328605
+        }
+      },
+      "gender": {
+        "k3": {
+          "ndcg": 0.9121252505272824,
+          "mrr": 0.8980496453900708,
+          "map": 0.8936170212765956
+        },
+        "k5": {
+          "ndcg": 0.9117096286270017,
+          "mrr": 0.8991134751773048,
+          "map": 0.8829713356973994
+        }
+      }
+    },
+    "recommendation_quality": {
+      "similarity_distribution": {
+        "mean": 0.8476169284496547,
+        "std": 0.057804679295063444,
+        "min": 0.6445078096473464,
+        "max": 1.0000000000000004,
+        "percentiles": {
+          "p25": 0.8123300169731701,
+          "p50": 0.8440706159485823,
+          "p75": 0.8899061758312764,
+          "p90": 0.925795787607154
+        }
+      },
+      "recommendation_confidence": {
+        "mean": 0.8600000000000003,
+        "std": 0.17663521732655696,
+        "distribution": [
+          {
+            "range": [
+              0.3,
+              0.37
+            ],
+            "count": 1
+          },
+          {
+            "range": [
+              0.37,
+              0.43999999999999995
+            ],
+            "count": 2
+          },
+          {
+            "range": [
+              0.43999999999999995,
+              0.51
+            ],
+            "count": 7
+          },
+          {
+            "range": [
+              0.51,
+              0.58
+            ],
+            "count": 0
+          },
+          {
+            "range": [
+              0.58,
+              0.6499999999999999
+            ],
+            "count": 6
+          },
+          {
+            "range": [
+              0.6499999999999999,
+              0.72
+            ],
+            "count": 5
+          },
+          {
+            "range": [
+              0.72,
+              0.7899999999999999
+            ],
+            "count": 0
+          },
+          {
+            "range": [
+              0.7899999999999999,
+              0.8599999999999999
+            ],
+            "count": 12
+          },
+          {
+            "range": [
+              0.8599999999999999,
+              0.9299999999999999
+            ],
+            "count": 23
+          },
+          {
+            "range": [
+              0.9299999999999999,
+              1
+            ],
+            "count": 44
+          }
+        ]
+      },
+      "category_consistency": {}
+    },
+    "diversity": {
+      "articletype": {
+        "catalog_coverage": 0.09154929577464789,
+        "avg_intra_list_diversity": 0.15599999999999992,
+        "unique_recommendations": 13
+      },
+      "gender": {
+        "catalog_coverage": 1,
+        "avg_intra_list_diversity": 0.14999999999999988,
+        "unique_recommendations": 5
+      }
+    }
+  },
+  "detailed_results": {
+    "category_analysis": {
+      "articletype": {
+        "Tshirts": {
+          "sample_count": 31,
+          "accuracy": 0.9354838709677419,
+          "avg_confidence": 0.9161290322580647,
+          "avg_similarity": 0.8773803793765168
+        },
+        "Shirts": {
+          "sample_count": 14,
+          "accuracy": 1,
+          "avg_confidence": 0.9571428571428572,
+          "avg_similarity": 0.9471785014015783
+        },
+        "Casual Shoes": {
+          "sample_count": 12,
+          "accuracy": 0.8333333333333334,
+          "avg_confidence": 0.8166666666666668,
+          "avg_similarity": 0.8583813623023454
+        },
+        "Watches": {
+          "sample_count": 11,
+          "accuracy": 1,
+          "avg_confidence": 0.9636363636363636,
+          "avg_similarity": 0.872759262588162
+        },
+        "Sports Shoes": {
+          "sample_count": 9,
+          "accuracy": 0.7777777777777778,
+          "avg_confidence": 0.7999999999999998,
+          "avg_similarity": 0.8358611723286822
+        },
+        "Kurtas": {
+          "sample_count": 8,
+          "accuracy": 1,
+          "avg_confidence": 0.85,
+          "avg_similarity": 0.9072951456477842
+        },
+        "Tops": {
+          "sample_count": 7,
+          "accuracy": 0.5714285714285714,
+          "avg_confidence": 0.6857142857142857,
+          "avg_similarity": 0.878258804939093
+        },
+        "Handbags": {
+          "sample_count": 8,
+          "accuracy": 0.875,
+          "avg_confidence": 0.825,
+          "avg_similarity": 0.8715249340992106
+        },
+        "Heels": {
+          "sample_count": 5,
+          "accuracy": 0.6,
+          "avg_confidence": 0.68,
+          "avg_similarity": 0.8766465894745487
+        },
+        "Sunglasses": {
+          "sample_count": 4,
+          "accuracy": 1,
+          "avg_confidence": 1,
+          "avg_similarity": 0.9358270378618634
+        },
+        "Wallets": {
+          "sample_count": 4,
+          "accuracy": 1,
+          "avg_confidence": 0.9,
+          "avg_similarity": 0.9345438482373966
+        },
+        "Flip Flops": {
+          "sample_count": 4,
+          "accuracy": 1,
+          "avg_confidence": 0.8500000000000001,
+          "avg_similarity": 0.9018478467211117
+        },
+        "Sandals": {
+          "sample_count": 4,
+          "accuracy": 0.75,
+          "avg_confidence": 0.7,
+          "avg_similarity": 0.9140136625106771
+        },
+        "Briefs": {
+          "sample_count": 3,
+          "accuracy": 1,
+          "avg_confidence": 1,
+          "avg_similarity": 0.9044544367323047
+        },
+        "Belts": {
+          "sample_count": 3,
+          "accuracy": 0.6666666666666666,
+          "avg_confidence": 1,
+          "avg_similarity": 0.933531655728563
+        },
+        "Backpacks": {
+          "sample_count": 3,
+          "accuracy": 1,
+          "avg_confidence": 1,
+          "avg_similarity": 0.8238498011662082
+        },
+        "Socks": {
+          "sample_count": 3,
+          "accuracy": 1,
+          "avg_confidence": 0.7999999999999999,
+          "avg_similarity": 0.841222999898875
+        }
+      },
+      "gender": {
+        "Women": {
+          "sample_count": 79,
+          "accuracy": 0.8734177215189873,
+          "avg_confidence": 0.8810126582278478,
+          "avg_similarity": 0.8835683431193201
+        },
+        "Men": {
+          "sample_count": 100,
+          "accuracy": 0.92,
+          "avg_confidence": 0.899999999999999,
+          "avg_similarity": 0.8855168286095096
+        },
+        "Boys": {
+          "sample_count": 3,
+          "accuracy": 0.6666666666666666,
+          "avg_confidence": 0.6666666666666666,
+          "avg_similarity": 0.8458981707497308
+        },
+        "Unisex": {
+          "sample_count": 4,
+          "accuracy": 0.75,
+          "avg_confidence": 0.7000000000000001,
+          "avg_similarity": 0.8481899337168342
+        }
+      }
+    },
+    "error_analysis": {
+      "confusion_matrices": {
+        "articletype": {
+          "matrix": {},
+          "correct": 90,
+          "total": 100
+        },
+        "gender": {
+          "matrix": {},
+          "correct": 92,
+          "total": 100
+        }
+      },
+      "common_errors": {
+        "articletype": [
+          {
+            "error": "Tshirts -> Tops",
+            "count": 2
+          },
+          {
+            "error": "Sports Shoes -> Casual Shoes",
+            "count": 2
+          },
+          {
+            "error": "Tops -> Tshirts",
+            "count": 2
+          },
+          {
+            "error": "Casual Shoes -> Sports Shoes",
+            "count": 1
+          },
+          {
+            "error": "Casual Shoes -> Formal Shoes",
+            "count": 1
+          },
+          {
+            "error": "Tops -> Shirts",
+            "count": 1
+          },
+          {
+            "error": "Handbags -> Wallets",
+            "count": 1
+          }
+        ],
+        "gender": [
+          {
+            "error": "Women -> Men",
+            "count": 4
+          },
+          {
+            "error": "Boys -> Men",
+            "count": 1
+          },
+          {
+            "error": "Men -> Unisex",
+            "count": 1
+          },
+          {
+            "error": "Men -> Women",
+            "count": 1
+          },
+          {
+            "error": "Girls -> Women",
+            "count": 1
+          }
+        ]
+      },
+      "similarity_analysis": {}
+    }
+  },
+  "performance": {
+    "avg_prediction_time_ms": 1.3069507999999999,
+    "throughput_per_second": 769.2307692307693,
+    "memory_usage_mb": {
+      "rss": 146,
+      "heapUsed": 37,
+      "heapTotal": 60
+    }
+  }
+}
