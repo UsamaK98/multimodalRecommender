@@ -38,9 +38,33 @@ export async function generateEmbeddings(csvPath, imagesDir, outPath = 'embeddin
     try {
       // read image (works with local file paths)
       const rawImage = await RawImage.read(imagePath);
+      
+      // Validate that the image was loaded properly
+      if (!rawImage) {
+        console.warn(`Skipping ${id} — failed to load image from ${imagePath}`);
+        continue;
+      }
+      
+      // Additional validation for image properties
+      if (!rawImage.size || !Array.isArray(rawImage.size) || rawImage.size.length !== 2) {
+        console.warn(`Skipping ${id} — image has invalid size property:`, rawImage.size);
+        continue;
+      }
 
       // process input for the model
-      const inputs = await processor({ images: rawImage });
+      let inputs;
+      try {
+        inputs = await processor(rawImage);
+      } catch (processError) {
+        console.warn(`Skipping ${id} — processor failed: ${processError.message}`);
+        continue;
+      }
+      
+      // Validate processor output
+      if (!inputs) {
+        console.warn(`Skipping ${id} — processor returned invalid input`);
+        continue;
+      }
 
       // run vision model
       const result = await visionModel(inputs);

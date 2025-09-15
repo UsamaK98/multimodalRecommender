@@ -15,3 +15,4 @@ archive.zip
 .DS_Store
 .ipynb_checkpoints/
 .vscode/
+model/node_modules/
