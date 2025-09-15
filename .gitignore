@@ -16,3 +16,8 @@ archive.zip
 .ipynb_checkpoints/
 .vscode/
 model/node_modules/
+frontend/node_modules/
+
+# Miscellaneous
+*.log
+remainingPrompt.txt
